@@ -1,37 +1,249 @@
 <!doctype html>
 <!--
-  PÁGINA DE SUPORTE DO WAKEUP
-  A Apple exige um "Support URL" com um jeito de entrar em contato. Esta é a página inicial do
-  site (GitHub Pages abre o index.html sozinho).
+  LANDING PAGE DO WAKEUP (também é a página de "Suporte" que a Apple pede)
+  A Apple exige um "Support URL" com um jeito de entrar em contato: a seção #contato cumpre isso.
+  Publicada no GitHub Pages (repositório rebecapaulino/wakeup-site). Pra atualizar: edite aqui em
+  site/, copie pro repositório do site e dê push.
 -->
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WakeUp: Suporte</title>
+  <title>WakeUp: ônibus e metrô</title>
+  <meta name="description" content="Pontos de ônibus com previsão de chegada, status do metrô e do trem, clima e um alarme que te acorda perto da sua parada. Sem login, seus dados ficam no seu celular.">
+  <meta name="theme-color" content="#F2FFF8">
+  <link rel="icon" href="icone.png">
+  <link rel="apple-touch-icon" href="icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+  <header class="wrap nav">
+    <a class="brand" href="#"><img src="icone.png" alt="">WakeUp</a>
+    <nav class="nav-links">
+      <a href="#recursos">Recursos</a>
+      <a href="#privacidade">Privacidade</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
   <main>
-    <p class="eyebrow">WakeUp: ônibus e metrô</p>
-    <h1>Suporte</h1>
-    <p>O WakeUp é um auxiliar de transporte para São Paulo e região: pontos de ônibus com previsão de
-      chegada, status do metrô e do trem, clima e o alarme "me acorda aqui", que toca quando sua
-      parada está chegando.</p>
+    <div class="wrap hero">
+      <div>
+        <span class="pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          São Paulo e região
+        </span>
+        <h1>Cochilou no ônibus? <em>A gente te acorda</em> na sua parada.</h1>
+        <p class="lead">Previsão de chegada dos ônibus, status do metrô e do trem, clima do dia e um alarme que toca quando seu ponto está chegando. Tudo num app só, sem login.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contato">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Em breve na App Store
+          </a>
+          <a class="btn btn-ghost" href="#recursos">Conhecer o app</a>
+        </div>
+        <p class="note">Grátis. Sem cadastro. Seus dados ficam no seu celular.</p>
+      </div>
+      <!-- Cena desenhada pelo script lá embaixo, pixel por pixel, como a pixel art do app. -->
+      <div class="scene" aria-label="Ilustração em pixel art de um ônibus passando pela cidade" role="img">
+        <svg id="cena" viewBox="0 0 96 64" preserveAspectRatio="xMidYMid slice"></svg>
+      </div>
+    </div>
 
-    <h2>Fale com a gente</h2>
-    <p>Encontrou um problema, tem uma sugestão ou quer denunciar um relato?
-      Escreva para <a href="mailto:rebecaoliveir2000@gmail.com">rebecaoliveir2000@gmail.com</a>. Respondemos em até 2 dias úteis.</p>
+    <section id="recursos">
+      <div class="wrap">
+        <p class="eyebrow">Recursos</p>
+        <h2>Feito pra quem anda de transporte público</h2>
+        <p class="sub">O que você precisa pra sair de casa na hora certa e não perder a parada, sem abrir cinco apps diferentes.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <h3>Ônibus chegando</h3>
+            <p>Veja os pontos perto de você e quanto falta pro próximo ônibus, com a posição ao vivo das linhas da SPTrans.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1.5 1.5 0 0 0 1.5-1.5h-3A1.5 1.5 0 0 0 12 22z"/><path d="M18 16V11a6 6 0 0 0-12 0v5l-2 2h16z"/></svg></div>
+            <h3>Me acorda aqui</h3>
+            <p>Escolha onde descer e pode cochilar. O alarme toca quando sua parada está chegando, mesmo com a tela apagada.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><path d="m8 21 2-4"/><path d="m16 21-2-4"/><circle cx="9" cy="14" r=".5"/><circle cx="15" cy="14" r=".5"/></svg></div>
+            <h3>Metrô e trem</h3>
+            <p>Status oficial de todas as linhas junto com relatos de quem está lá agora: parado, lento ou lotado.</p>
+          </div>
+          <div class="card">
+            <div class="icon sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2"/><path d="m5.6 5.6 1.4 1.4"/><path d="M3 12h2"/><path d="M8.5 13a4 4 0 1 1 6.9-3.9"/><path d="M17 20H9a4 4 0 1 1 1-7.9A5 5 0 0 1 19.5 14 3 3 0 0 1 17 20z"/></svg></div>
+            <h3>Clima de hoje e amanhã</h3>
+            <p>Previsão hora a hora e um conselho direto: levar guarda-chuva, casaco ou sair mais cedo.</p>
+          </div>
+          <div class="card">
+            <div class="icon sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+            <h3>Lembretes por lugar</h3>
+            <p>Avisos quando você chega ou sai de um lugar, ou passa perto de um tipo de lugar, como farmácia ou mercado.</p>
+          </div>
+          <div class="card">
+            <div class="icon sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3z"/><path d="M9 4v13"/><path d="M15 7v13"/></svg></div>
+            <h3>Grande SP e interior</h3>
+            <p>Ônibus metropolitanos da Grande SP, Campinas, Baixada Santista, Sorocaba e Vale do Paraíba, com horários.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h2>Dúvidas comuns</h2>
-    <h3>O alarme de chegada não tocou</h3>
-    <p>Confira em Ajustes do iPhone, WakeUp, se a Localização está como "Sempre" e se as Notificações
-      estão permitidas. O modo Pouca Energia pode atrasar o alarme.</p>
-    <h3>A previsão do ônibus está diferente do que aconteceu</h3>
-    <p>As previsões vêm dos dados públicos da SPTrans e da ARTESP e podem ter atrasos. O WakeUp não é
-      um app oficial dessas empresas.</p>
-    <h3>Meus dados ficam salvos onde?</h3>
-    <p>Só no seu celular. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
+    <section id="privacidade">
+      <div class="wrap">
+        <div class="band">
+          <div>
+            <p class="eyebrow">Privacidade</p>
+            <h2>Seus dados ficam com você</h2>
+            <p>O WakeUp não tem login nem servidor próprio. Lembretes, lugares, favoritos e alarmes ficam guardados só no seu celular. <a href="privacidade.html" style="color:#fff">Ler a política de privacidade</a>.</p>
+          </div>
+          <ul class="checks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Sem cadastro e sem login</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Sem anúncios e sem rastreamento</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>GPS ligado só quando um alarme precisa</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Funciona mesmo sem internet</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas">
+      <div class="wrap">
+        <p class="eyebrow">Suporte</p>
+        <h2>Dúvidas comuns</h2>
+        <p class="sub">Não achou sua resposta? Fale com a gente lá embaixo.</p>
+        <div class="faq">
+          <details>
+            <summary>O alarme de chegada não tocou. O que eu faço?</summary>
+            <p>Confira em Ajustes do iPhone, WakeUp, se a Localização está como "Sempre" e se as Notificações estão permitidas. O modo Pouca Energia pode atrasar o alarme.</p>
+          </details>
+          <details>
+            <summary>A previsão do ônibus estava diferente do que aconteceu</summary>
+            <p>As previsões vêm dos dados públicos da SPTrans e da ARTESP e podem ter atrasos. O WakeUp não é um app oficial dessas empresas.</p>
+          </details>
+          <details>
+            <summary>O app gasta muita bateria?</summary>
+            <p>Não. O GPS só fica ligado enquanto um alarme de chegada ou um lembrete por lugar está ativo. No resto do tempo ele fica desligado.</p>
+          </details>
+          <details>
+            <summary>Vi um relato ofensivo. Como denuncio?</summary>
+            <p>Toque na bandeira ao lado do relato e escolha "Denunciar e bloquear". Ele some na hora pra você, junto com tudo que a mesma pessoa mandar, e a denúncia é revisada.</p>
+          </details>
+          <details>
+            <summary>Onde meus dados ficam salvos?</summary>
+            <p>Só no seu celular. Se você apagar o app, eles são apagados junto. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <div class="wrap">
+        <div class="card">
+          <p class="eyebrow">Contato</p>
+          <h2>Fale com a gente</h2>
+          <p class="sub">Encontrou um problema, tem uma ideia ou quer denunciar um relato? Respondemos em até 2 dias úteis.</p>
+          <a class="btn btn-primary" href="mailto:rebecaoliveir2000@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+            rebecaoliveir2000@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="wrap">
+    <div class="foot">
+      <p>O WakeUp é independente e não é um app oficial da SPTrans, do Metrô, da CPTM, da ARTESP nem de nenhuma operadora. Mapa © OpenStreetMap. Ônibus metropolitanos: ARTESP, Portal de Dados Abertos (CC BY). Clima: Open-Meteo.</p>
+      <nav><a href="privacidade.html">Privacidade</a><a href="#contato">Contato</a></nav>
+    </div>
+  </footer>
+
+  <script>
+    /*
+     * PIXEL ART DA CENA
+     * Mesmo jeito do app (src/components/pixel): cada sprite é uma lista de linhas de texto, e
+     * cada letra é um pixel de uma cor da paleta ("." é vazio). O ônibus é o MESMO desenho do
+     * `BUS` em sprites.ts. O script transforma as letras em quadradinhos <rect> do SVG.
+     */
+    const NS = 'http://www.w3.org/2000/svg';
+    const PX = {
+      k: '#1D4A3B', G: '#2F6B57', w: '#DDEBFF', b: '#2F6B57', m: '#9FDDBA', y: '#FFE08A', d: '#133328',
+      W: '#FFFFFF', s: '#D4E2F7', S: '#FFD166', o: '#F2B233', L: '#FFF3C4',
+    };
+    const BUS = [
+      '.kkkkkkkkkkkkkkkk.',
+      'kGGGGGGGGGGGGGGGGk',
+      'kwwbwwbwwbwwbwwwGk',
+      'kwwbwwbwwbwwbwwwGk',
+      'kGGGGGGGGGGGGGGGGy',
+      'kmmmmmmmmmmmmmmmmk',
+      'kGGGGGGGGGGGGGGGGk',
+      '.kk.dd.kkkkkk.dd..',
+      '....dd........dd..',
+    ];
+    const SUN = ['..SSSS..', '.SLSSSS.', 'SSSSSSSo', 'SSSSSSSo', 'SSSSSSSo', 'SSSSSSoo', '.SSSSoo.', '..oooo..'];
+    const CLOUD = ['.....WWWW.......', '...WWWWWWWW.WWW.', '.WWWWWWWWWWWWWWW', 'WWWWWWWWWWWWWWWW', '.ssssssssssssss.'];
+    // Placa do ponto de ônibus.
+    const STOP = ['GGGGG', 'GWWWG', 'GWGWG', 'GWWWG', 'GGGGG', '..k..', '..k..', '..k..', '..k..', '..k..', '..k..', '.kkk.'];
+
+    const svg = document.getElementById('cena');
+    const rect = (parent, x, y, w, h, fill) => {
+      const r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', w); r.setAttribute('height', h);
+      r.setAttribute('fill', fill);
+      parent.appendChild(r);
+    };
+    const group = (className) => {
+      const g = document.createElementNS(NS, 'g');
+      if (className) g.setAttribute('class', className);
+      svg.appendChild(g);
+      return g;
+    };
+    const sprite = (parent, rows, x, y) => {
+      rows.forEach((row, j) => [...row].forEach((ch, i) => {
+        if (ch !== '.' && PX[ch]) rect(parent, x + i, y + j, 1, 1, PX[ch]);
+      }));
+    };
+
+    const base = group();
+    rect(base, 0, 0, 96, 64, '#E7F0FF'); // céu
+    sprite(base, SUN, 74, 6);
+
+    // Nuvens andando devagar.
+    const clouds = group('drift');
+    sprite(clouds, CLOUD, 4, 10);
+    sprite(clouds, CLOUD, 46, 4);
+
+    // Prédios: [x, largura, altura, cor]. As janelas são pontinhos claros num padrão regular.
+    const city = group();
+    const buildings = [
+      [0, 12, 26, '#9FDDBA'], [11, 9, 34, '#7FC9A2'], [20, 14, 22, '#C8F0D6'], [33, 10, 38, '#2F6B57'],
+      [43, 13, 28, '#9FDDBA'], [56, 9, 20, '#7FC9A2'], [64, 15, 32, '#C8F0D6'], [79, 9, 24, '#2F6B57'], [87, 9, 30, '#9FDDBA'],
+    ];
+    const ground = 46;
+    for (const [x, w, h, color] of buildings) {
+      rect(city, x, ground - h, w, h, color);
+      const dark = color === '#2F6B57';
+      for (let yy = ground - h + 3; yy < ground - 3; yy += 4) {
+        for (let xx = x + 2; xx < x + w - 2; xx += 3) rect(city, xx, yy, 1, 2, dark ? '#FFE08A' : '#FFFFFF');
+      }
+    }
+
+    // Calçada, rua e faixa.
+    rect(city, 0, ground, 96, 3, '#DDEEE4');
+    rect(city, 0, ground + 3, 96, 15, '#3D5F53');
+    for (let x = 2; x < 96; x += 10) rect(city, x, ground + 10, 5, 1, '#C8F0D6');
+    sprite(city, STOP, 60, ground - 11);
+
+    // O ônibus, andando "em saltos" de 1 pixel (classe .drive no CSS).
+    const bus = group('drive');
+    sprite(bus, BUS, 0, ground);
+  </script>
 </body>
 </html>

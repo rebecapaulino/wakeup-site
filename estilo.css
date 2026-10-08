@@ -1,30 +1,197 @@
-/* Mesma paleta "Menta" do app (constants/themes.ts), pra página parecer parte dele. */
+/*
+ * SITE DO WAKEUP (landing + privacidade)
+ * Mesma identidade do app: paleta "Menta" (constants/themes.ts), fonte Plus Jakarta Sans,
+ * cards brancos com sombra suave e raio 24, botões em pílula, floresta só pras ações.
+ */
 :root {
-  --bg: #F2FFF8;
-  --card: #FFFFFF;
+  --mist: #F2FFF8;
+  --sky: #E7F0FF;
+  --mint: #C8F0D6;
+  --mint-strong: #9FDDBA;
+  --forest: #2F6B57;
+  --forest-dark: #1D4A3B;
   --ink: #133328;
   --muted: #5F7F74;
-  --forest: #2F6B57;
+  --card: #FFFFFF;
+  --border: #DCEDE3;
+  --shadow: 0 10px 30px rgba(47, 107, 87, 0.08);
 }
+
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--mist);
   color: var(--ink);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font: 17px/1.6 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
-main {
-  max-width: 680px;
-  margin: 32px auto;
-  padding: 28px 20px;
+a { color: var(--forest); }
+img, svg { display: block; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Topo ── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; }
+.brand img { width: 40px; height: 40px; border-radius: 11px; }
+.nav-links { display: flex; gap: 22px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 15px; }
+.nav-links a:hover { color: var(--forest); }
+
+/* ── Hero ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 72px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--mint);
+  color: var(--forest);
+  font-weight: 700;
+  font-size: 14px;
+}
+.hero h1 {
+  margin: 18px 0 16px;
+  font-size: clamp(36px, 5.4vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.hero h1 em { font-style: normal; color: var(--forest); }
+.hero p.lead { margin: 0 0 28px; font-size: 19px; color: var(--muted); max-width: 30em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn svg { width: 20px; height: 20px; }
+.btn-primary { background: var(--forest); color: #fff; }
+.btn-ghost { background: var(--card); color: var(--forest); box-shadow: var(--shadow); }
+.note { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+/* Cena em pixel art: o SVG é montado pelo script a partir dos sprites em texto. */
+.scene {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--sky);
+  aspect-ratio: 96 / 64;
+}
+.scene svg { width: 100%; height: 100%; image-rendering: pixelated; shape-rendering: crispEdges; }
+
+/* Ônibus e nuvens andam "em saltos" (steps), como no app, que anima a 10 fps. */
+.drive { animation: drive 9s steps(90) infinite; animation-delay: -3.5s; } /* começa já no meio da rua */
+@keyframes drive { from { transform: translateX(-20px); } to { transform: translateX(100px); } }
+.drift { animation: drift 30s steps(60) infinite; animation-delay: -8s; }
+@keyframes drift { from { transform: translateX(-30px); } to { transform: translateX(100px); } }
+@media (prefers-reduced-motion: reduce) { .drive, .drift { animation: none; } }
+
+/* ── Seções ── */
+section { padding: 64px 0; }
+.eyebrow { margin: 0 0 8px; color: var(--forest); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+h2 { margin: 0 0 12px; font-size: clamp(28px, 3.6vw, 38px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; }
+.sub { margin: 0 0 36px; color: var(--muted); max-width: 36em; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card {
   background: var(--card);
   border-radius: 24px;
-  box-shadow: 0 8px 24px rgba(47, 107, 87, 0.08);
+  padding: 26px;
+  box-shadow: var(--shadow);
 }
-@media (max-width: 720px) { main { margin: 0; border-radius: 0; } }
-h1 { margin: 4px 0 8px; font-size: 28px; }
-h2 { margin-top: 28px; font-size: 20px; }
-h3 { margin-bottom: 4px; font-size: 16px; }
-a { color: var(--forest); }
-.eyebrow { margin: 0; color: var(--forest); font-weight: 600; }
+.card h3 { margin: 16px 0 6px; font-size: 18px; font-weight: 700; }
+.card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--mint);
+  color: var(--forest);
+}
+.icon svg { width: 24px; height: 24px; }
+.icon.sky { background: var(--sky); }
+
+/* Faixa de privacidade: o único bloco escuro da página, pra marcar a promessa principal. */
+.band {
+  background: var(--forest);
+  color: #fff;
+  border-radius: 32px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.band .eyebrow { color: var(--mint-strong); }
+.band p { color: #D6EFE2; margin: 0; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.checks li { display: flex; gap: 12px; align-items: center; font-weight: 600; }
+.checks svg { width: 22px; height: 22px; flex: none; color: var(--mint-strong); }
+
+/* Perguntas: <details> abre e fecha sem nenhum JavaScript. */
+.faq { display: grid; gap: 12px; max-width: 760px; }
+.faq details { background: var(--card); border-radius: 20px; padding: 20px 24px; box-shadow: var(--shadow); }
+.faq summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--forest); font-size: 22px; line-height: 1; }
+.faq details[open] summary::after { content: '−'; }
+.faq details p { margin: 12px 0 0; color: var(--muted); }
+
+.contact { text-align: center; }
+.contact .card { max-width: 640px; margin: 0 auto; padding: 44px 28px; }
+.contact .sub { margin: 0 auto 26px; }
+
+/* ── Rodapé ── */
+footer { padding-top: 40px; padding-bottom: 56px; color: var(--muted); font-size: 14px; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; border-top: 1px solid var(--border); padding-top: 28px; }
+.foot p { margin: 0; max-width: 40em; }
+.foot nav { display: flex; gap: 18px; }
+
+/* ── Página de texto (privacidade) ── */
+.doc { max-width: 760px; margin: 8px auto 0; }
+.doc .card { padding: 40px; }
+.doc h1 { margin: 6px 0 8px; line-height: 1.15; font-size: clamp(30px, 4vw, 40px); letter-spacing: -0.02em; }
+.doc h2 { font-size: 21px; margin: 32px 0 8px; }
+.doc p, .doc li { color: #2C4C41; }
+.doc ul { padding-left: 20px; }
+.doc li { margin-bottom: 6px; }
 .muted { color: var(--muted); font-size: 14px; }
+
+/* ── Celular ── */
+@media (max-width: 860px) {
+  .hero, .band { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-top: 16px; padding-bottom: 48px; gap: 32px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .band { padding: 32px 24px; }
+  .nav-links { display: none; }
+  section { padding: 44px 0; }
+  .doc .card { padding: 28px 20px; }
+}
+@media (min-width: 861px) and (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
