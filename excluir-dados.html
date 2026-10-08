@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+  COMO PEDIR A EXCLUSÃO DOS DADOS
+  O Google Play exige este link (campo "URL para exclusão de dados" em Segurança dos dados) e diz
+  o que a página precisa ter: o nome do app, os passos pra pedir a exclusão, quais dados são
+  apagados ou mantidos e por quanto tempo. Os prazos daqui são REAIS: a limpeza automática roda
+  no Supabase (tarefa "limpar-relatos-antigos", ver README). Mudou o prazo lá, muda aqui.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WakeUp: Excluir dados</title>
+  <link rel="icon" href="icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="index.html"><img src="icone.png" alt="">WakeUp</a>
+    <nav class="nav-links"><a href="index.html">Início</a><a href="privacidade.html">Privacidade</a><a href="index.html#contato">Contato</a></nav>
+  </header>
+  <main class="wrap doc">
+    <div class="card">
+      <p class="eyebrow">WakeUp: ônibus e metrô</p>
+      <h1>Como excluir seus dados</h1>
+      <p class="muted">Atualizada em 8 de outubro de 2026</p>
+
+      <p>O WakeUp: ônibus e metrô não tem login nem conta. Quase tudo fica só no seu celular, então
+        você mesmo controla a exclusão. Veja abaixo o que fica onde e como apagar cada parte.</p>
+
+      <h2>Dados no seu celular</h2>
+      <p>Lembretes, lugares salvos, favoritos, alarmes, ajustes e o histórico dos relatos que você
+        enviou ficam guardados apenas no aparelho.</p>
+      <p><strong>Como apagar:</strong> desinstale o app, ou vá em Configurações do Android, Apps,
+        WakeUp, Armazenamento e toque em "Limpar dados". Tudo é apagado na hora e não fica cópia em
+        nenhum outro lugar.</p>
+
+      <h2>Relatos do metrô e do trem</h2>
+      <p>Quando você envia um relato, são guardados num banco de dados compartilhado: a linha, o tipo
+        de problema, a estação e o comentário (se você escreveu) e um identificador aleatório criado
+        pelo app, que não está ligado ao seu nome, e-mail ou telefone.</p>
+      <ul>
+        <li>Os relatos aparecem para outras pessoas por <strong>1 hora</strong>.</li>
+        <li>São <strong>apagados automaticamente depois de 7 dias</strong>.</li>
+        <li>Denúncias de relatos são apagadas automaticamente depois de 30 dias.</li>
+      </ul>
+      <p><strong>Para apagar antes do prazo:</strong> envie um e-mail para
+        <a href="mailto:rebecaoliveir2000@gmail.com?subject=Excluir%20relato%20do%20WakeUp">rebecaoliveir2000@gmail.com</a>
+        com o assunto "Excluir relato do WakeUp", informando a linha, a estação e o dia e horário
+        aproximado do relato. A exclusão é feita em até 7 dias, e você recebe uma confirmação por
+        e-mail.</p>
+
+      <h2>O que não é guardado</h2>
+      <p>O WakeUp não guarda sua localização, seu nome, seu e-mail nem seu telefone fora do aparelho.
+        Os serviços públicos que o app consulta (clima, mapa, busca de endereço) recebem apenas o
+        necessário para responder cada pedido. Saiba mais na
+        <a href="privacidade.html">política de privacidade</a>.</p>
+    </div>
+  </main>
+  <footer class="wrap">
+    <div class="foot">
+      <p>O WakeUp é independente e não é um app oficial da SPTrans, do Metrô, da CPTM, da ARTESP nem de nenhuma operadora.</p>
+      <nav><a href="index.html">Início</a><a href="privacidade.html">Privacidade</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
